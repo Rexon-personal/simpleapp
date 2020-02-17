@@ -1,34 +1,58 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<header style="height: 60px; background-color: #1166e7;">
+<div style="    padding: 5px 5px;
+    padding-top: 20px;
+    color: white;
+    font-size: x-large;">Spinnakar</div>
+</header>
 <head>
+  <title>Spinnakar</title>
   <meta charset="utf-8">
-  <title>Sample Deployment</title>
-  <style>
-    body {
-      color: #ffffff;
-      background-color: blue;
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-    }
-    
-    h1 {
-      font-size: 500%;
-      font-weight: normal;
-      margin-bottom: 0;
-    }
-    
-    h2 {
-      font-size: 200%;
-      font-weight: normal;
-      margin-bottom: 0;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script>
+  var onTabChange = function() {
+	console.log(event.target);
+	var tabs = document.querySelector('.nav-tabs');
+	if (tabs) {
+		for(var i = 0; i < tabs.children.length; i++) {
+			var tab = tabs.children[i];
+			if (tab && tab.classList.contains('active')) {
+				tab.classList.remove('active');
+			}
+		}
+	}
+  }
+  </script>
 </head>
 <body>
-  <div align="center">
-    <h1>Welcome to Version 1 production of the web application</h1>
-    <h2>This application has been deployed on Kubernetes.</h2>
+
+<div class="container-fluid" style="padding-top: 15px">
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home" onClick="onTabChange()">Deployment</a></li>
+    <li><a data-toggle="tab" href="#menu1">Deployment Status</a></li>
+    <li><a data-toggle="tab" href="#menu2">Spinnakar tool</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <h3>Deployment</h3>
+      <p>Deployment here..</p>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <h3>Deployment Status</h3>
+      <p>Deployment status here...</p>
+    </div>
+    <div id="menu2" class="tab-pane fade">
+      <h3>Spinnakar tool</h3>
+      <img src="https://blog.armory.io/content/images/2017/10/spinnaker-jenkins.png" />
+    </div>
   </div>
+</div>
+
 </body>
 </html>
-
